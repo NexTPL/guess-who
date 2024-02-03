@@ -16,7 +16,7 @@ const App = () => {
 	]);
 
 	const DataHandler = (data: []) => {
-		Player.current = data[Math.floor(Math.random() * data.length)].id;
+		Player.current = data[Math.floor(Math.random() * data.length)]['id'];
 		SetData(data);
 	};
 

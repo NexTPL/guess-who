@@ -23,7 +23,7 @@ const Settings = (props: any) => {
 		// Seed
 
 		if (seed.current.trim() == '') {
-			let list = [];
+			const list = [];
 			for (let i = 0; i < cards.current.length; i++) list.push(i);
 			for (let i = 0; i < 20 && list.length != 0; i++) {
 				const j = Math.floor(Math.random() * list.length);
@@ -34,7 +34,7 @@ const Settings = (props: any) => {
 
 		// Encode
 
-		let final = [{}];
+		const final = [{}];
 		final.splice(0, 1); // typescript error
 		const filtered = seed.current.split(';').filter((n) => n);
 		for (let i = 0; i < filtered.length; i++) {
