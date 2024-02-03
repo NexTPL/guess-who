@@ -17,7 +17,7 @@ const Card = (props: any) => {
 				alignItems: 'center',
 				gap: 2,
 				color: props.id !== props.player ? (Overlay ? '#FF0000' : '#FFFFFF') : '#1CEE42',
-				border: 3,
+				border: 4,
 			}}
 		>
 			<Box

@@ -8,9 +8,9 @@ const Settings = (props: any) => {
 
 	const Process = () => {
 		cards.current = [];
-		cards.current.splice(0, 1); // typescript error
 
 		const lines = string.current.split('\n').filter((n) => n);
+		if (!lines[0]) return;
 		for (let i = 0; i < lines.length; i++) {
 			const card = lines[i].split(' ').filter((n) => n);
 			cards.current.push({
@@ -40,7 +40,6 @@ const Settings = (props: any) => {
 		for (let i = 0; i < filtered.length; i++) {
 			final.push(cards.current[+filtered[i]]);
 		}
-		console.log(filtered);
 		props.data(final);
 	};
 
@@ -60,7 +59,7 @@ const Settings = (props: any) => {
 					padding: 3,
 					display: 'flex',
 					flexDirection: 'column',
-					gap: 5,
+					gap: 2,
 				}}
 			>
 				<TextField
@@ -75,7 +74,6 @@ const Settings = (props: any) => {
 					}}
 				/>
 				<TextField
-					label='Links'
 					placeholder='Paste Links here'
 					multiline
 					color='primary'
@@ -84,6 +82,9 @@ const Settings = (props: any) => {
 					onBlur={(event) => {
 						string.current = event.target.value;
 						Process();
+					}}
+					sx={{
+						overflowY: 'scroll',
 					}}
 				/>
 			</Box>
