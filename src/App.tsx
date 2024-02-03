@@ -1,10 +1,11 @@
 import { Button, Container, Paper, Typography } from '@mui/material';
 import './App.css';
-import { useState } from 'react';
+import { useRef, useState } from 'react';
 import Card from './components/Card';
 import Settings from './components/Settings';
 
 const App = () => {
+	const Player = useRef(0);
 	const [Open, SetOpen] = useState(false);
 	const [Data, SetData] = useState([
 		{
@@ -16,6 +17,7 @@ const App = () => {
 
 	const DataHandler = (data: []) => {
 		SetData(data);
+		Player.current = Math.floor(Math.random() * data.length);
 	};
 
 	return (
@@ -58,7 +60,13 @@ const App = () => {
 				}}
 			>
 				{Data.map((card) => (
-					<Card name={card.name} url={card.url} key={card.id} />
+					<Card
+						name={card.name}
+						url={card.url}
+						key={card.id}
+						id={card.id}
+						player={Player.current}
+					/>
 				))}
 			</Paper>
 			<Button

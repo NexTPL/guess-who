@@ -5,7 +5,9 @@ const Card = (props: any) => {
 	const [Overlay, SetOverlay] = useState(false);
 	return (
 		<Paper
-			onClick={() => SetOverlay(!Overlay)}
+			onClick={() => {
+				if (props.id !== props.player) SetOverlay(!Overlay);
+			}}
 			elevation={10}
 			sx={{
 				padding: 2,
@@ -14,7 +16,7 @@ const Card = (props: any) => {
 				flexDirection: 'column',
 				alignItems: 'center',
 				gap: 2,
-				color: Overlay ? '#FF0000' : '#FFFFFF',
+				color: props.id !== props.player ? (Overlay ? '#FF0000' : '#FFFFFF') : '#1CEE42',
 				border: 3,
 			}}
 		>
