@@ -26,6 +26,7 @@ const App = () => {
 				display: 'flex',
 				flexDirection: 'column',
 				margin: 'auto',
+				overflowX: 'hidden',
 				gap: 5,
 			}}
 		>
@@ -35,7 +36,7 @@ const App = () => {
 				sx={{
 					textAlign: 'center',
 					p: 2,
-					width: '400px',
+					maxWidth: '400px',
 					margin: 'auto',
 					borderRadius: 4,
 					boxShadow: 10,
@@ -74,7 +75,7 @@ const App = () => {
 				sx={{
 					width: '130px',
 					backgroundColor: '#000000',
-					margin: 'auto',
+					marginX: 'auto',
 				}}
 			>
 				Settings

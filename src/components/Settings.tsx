@@ -1,4 +1,4 @@
-import { Box, Modal, TextField } from '@mui/material';
+import { Box, Button, Modal, TextField } from '@mui/material';
 import { useRef } from 'react';
 
 const Settings = (props: any) => {
@@ -6,7 +6,7 @@ const Settings = (props: any) => {
 	const seed = useRef('');
 	const cards = useRef([{}]);
 
-	const Process = () => {
+	const Cards = () => {
 		cards.current = [];
 
 		const lines = string.current.split('\n').filter((n) => n);
@@ -22,23 +22,23 @@ const Settings = (props: any) => {
 
 		// Seed
 
-		if (seed.current.trim() == '') {
-			const list = [];
-			for (let i = 0; i < cards.current.length; i++) list.push(i);
-			for (let i = 0; i < 20 && list.length != 0; i++) {
-				const j = Math.floor(Math.random() * list.length);
-				seed.current += list[j] + ';';
-				list.splice(j, 1);
-			}
+		const list = [];
+		for (let i = 0; i < cards.current.length; i++) list.push(i);
+		for (let i = 0; i < 20 && list.length != 0; i++) {
+			const j = Math.floor(Math.random() * list.length);
+			seed.current += list[j] + ';';
+			list.splice(j, 1);
 		}
 
-		// Encode
+		Encode();
+	};
 
+	const Encode = () => {
 		const final = [{}];
 		final.splice(0, 1); // typescript error
 		const filtered = seed.current.split(';').filter((n) => n);
 		for (let i = 0; i < filtered.length; i++) {
-			final.push(cards.current[+filtered[i]]);
+			if (cards.current[+filtered[i]]) final.push(cards.current[+filtered[i]]);
 		}
 		props.data(final);
 	};
@@ -52,7 +52,6 @@ const Settings = (props: any) => {
 		>
 			<Box
 				sx={{
-					width: '90vw',
 					height: '100vh',
 					backgroundColor: '#000000',
 					margin: 'auto',
@@ -64,29 +63,36 @@ const Settings = (props: any) => {
 			>
 				<TextField
 					placeholder='Leave empty for new one'
-					multiline
 					color='primary'
 					fullWidth
 					defaultValue={seed.current}
-					onBlur={(event) => {
+					onChange={(event) => {
 						seed.current = event.target.value;
-						Process();
+						Encode();
 					}}
 				/>
 				<TextField
-					placeholder='Paste Links here'
+					placeholder='Paste links here'
 					multiline
 					color='primary'
 					fullWidth
+					maxRows={30}
 					defaultValue={string.current}
-					onBlur={(event) => {
+					onChange={(event) => {
 						string.current = event.target.value;
-						Process();
-					}}
-					sx={{
-						overflowY: 'scroll',
+						Cards();
 					}}
 				/>
+				<Button
+					onClick={props.close}
+					sx={{
+						width: '130px',
+						backgroundColor: '#1E1E1E',
+						marginX: 'auto',
+					}}
+				>
+					Close
+				</Button>
 			</Box>
 		</Modal>
 	);

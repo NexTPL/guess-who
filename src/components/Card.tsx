@@ -6,7 +6,7 @@ const Card = (props: any) => {
 	return (
 		<Paper
 			onClick={() => {
-				if (props.id !== props.player) SetOverlay(!Overlay);
+				SetOverlay(!Overlay);
 			}}
 			elevation={10}
 			sx={{
@@ -16,16 +16,17 @@ const Card = (props: any) => {
 				flexDirection: 'column',
 				alignItems: 'center',
 				gap: 2,
-				color: props.id !== props.player ? (Overlay ? '#FF0000' : '#FFFFFF') : '#1CEE42',
+				color: props.id !== props.player ? '#FFFFFF' : '#1CEE42',
 				border: 4,
+				opacity: Overlay ? (props.id === props.player ? '60%' : '30%') : '100%',
 			}}
 		>
 			<Box
 				component={'img'}
 				sx={{
 					borderRadius: 3,
-					width: '200px',
-					height: '200px',
+					width: '160px',
+					height: '160px',
 					boxShadow: 5,
 				}}
 				src={props.url}
@@ -34,7 +35,7 @@ const Card = (props: any) => {
 			<Box
 				sx={{
 					boxShadow: 5,
-					width: '200px',
+					width: '160px',
 					bgcolor: '#6d6d6d',
 					borderRadius: 2,
 					textAlign: 'center',
