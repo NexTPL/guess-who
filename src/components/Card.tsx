@@ -1,12 +1,13 @@
 import { Paper, Box } from '@mui/material';
-import { useState } from 'react';
+import { useEffect, useState } from 'react';
 
 const Card = (props: any) => {
-	const [Overlay, SetOverlay] = useState(false);
+	const [overlay, setOverlay] = useState(false);
+	useEffect(() => setOverlay(false), [props.number]);
 	return (
 		<Paper
 			onClick={() => {
-				SetOverlay(!Overlay);
+				setOverlay(!overlay);
 			}}
 			elevation={10}
 			sx={{
@@ -18,7 +19,7 @@ const Card = (props: any) => {
 				gap: 2,
 				color: props.id !== props.player ? '#FFFFFF' : '#1CEE42',
 				border: 4,
-				opacity: Overlay ? (props.id === props.player ? '60%' : '30%') : '100%',
+				opacity: overlay ? (props.id === props.player ? '60%' : '30%') : '100%',
 			}}
 		>
 			<Box

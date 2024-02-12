@@ -5,9 +5,10 @@ import Card from './components/Card';
 import Settings from './components/Settings';
 
 const App = () => {
-	const Player = useRef(0);
-	const [Open, SetOpen] = useState(false);
-	const [Data, SetData] = useState([
+	const player = useRef(0);
+	const number = useRef(0);
+	const [open, setOpen] = useState(false);
+	const [data, setData] = useState([
 		{
 			url: 'https://static.vecteezy.com/system/resources/previews/007/126/739/non_2x/question-mark-icon-free-vector.jpg',
 			name: '?',
@@ -16,8 +17,9 @@ const App = () => {
 	]);
 
 	const DataHandler = (data: []) => {
-		Player.current = data[Math.floor(Math.random() * data.length)]['id'];
-		SetData(data);
+		player.current = data[Math.floor(Math.random() * data.length)]['id'];
+		number.current++;
+		setData(data);
 	};
 
 	return (
@@ -60,18 +62,19 @@ const App = () => {
 					justifyContent: 'space-evenly',
 				}}
 			>
-				{Data.map((card) => (
+				{data.map((card) => (
 					<Card
 						name={card.name}
 						url={card.url}
 						key={card.id}
 						id={card.id}
-						player={Player.current}
+						player={player.current}
+						number={number.current}
 					/>
 				))}
 			</Paper>
 			<Button
-				onClick={() => SetOpen(!Open)}
+				onClick={() => setOpen(!open)}
 				sx={{
 					width: '130px',
 					backgroundColor: '#000000',
@@ -80,7 +83,7 @@ const App = () => {
 			>
 				Settings
 			</Button>
-			<Settings close={() => SetOpen(false)} open={Open} data={DataHandler} />
+			<Settings close={() => setOpen(false)} open={open} data={DataHandler} />
 		</Container>
 	);
 };
