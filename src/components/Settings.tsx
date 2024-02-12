@@ -8,6 +8,7 @@ const Settings = (props: any) => {
 
 	const Cards = () => {
 		cards.current = [];
+		seed.current = '';
 
 		const lines = string.current.split('\n').filter((n) => n);
 		if (!lines[0]) return;
@@ -19,17 +20,20 @@ const Settings = (props: any) => {
 				id: i,
 			});
 		}
+		Seed();
+	};
 
-		// Seed
-
+	const Seed = () => {
 		const list = [];
-		for (let i = 0; i < cards.current.length; i++) list.push(i);
-		for (let i = 0; i < 20 && list.length != 0; i++) {
-			const j = Math.floor(Math.random() * list.length);
-			seed.current += list[j] + ';';
-			list.splice(j, 1);
-		}
 
+		if (seed.current.split(';').filter((n) => n).length === 0) {
+			for (let i = 0; i < cards.current.length; i++) list.push(i);
+			for (let i = 0; i < 20 && list.length != 0; i++) {
+				const j = Math.floor(Math.random() * list.length);
+				seed.current += list[j] + ';';
+				list.splice(j, 1);
+			}
+		}
 		Encode();
 	};
 
@@ -39,6 +43,11 @@ const Settings = (props: any) => {
 		const filtered = seed.current.split(';').filter((n) => n);
 		for (let i = 0; i < filtered.length; i++) {
 			if (cards.current[+filtered[i]]) final.push(cards.current[+filtered[i]]);
+			else {
+				seed.current = '';
+				Seed(); // generate new valid seed
+				return; // prevent from undefined
+			}
 		}
 		props.data(final);
 	};
@@ -68,7 +77,7 @@ const Settings = (props: any) => {
 					defaultValue={seed.current}
 					onChange={(event) => {
 						seed.current = event.target.value;
-						Encode();
+						Seed();
 					}}
 				/>
 				<TextField
