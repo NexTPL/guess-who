@@ -5,6 +5,7 @@ const Settings = (props: any) => {
 	const string = useRef('');
 	const seed = useRef('');
 	const cards = useRef([{}]);
+	const limit = useRef('20');
 
 	const Cards = () => {
 		cards.current = [];
@@ -28,7 +29,7 @@ const Settings = (props: any) => {
 
 		if (seed.current.split(';').filter((n) => n).length === 0) {
 			for (let i = 0; i < cards.current.length; i++) list.push(i);
-			for (let i = 0; i < 20 && list.length != 0; i++) {
+			for (let i = 0; i < +limit.current && list.length != 0; i++) {
 				const j = Math.floor(Math.random() * list.length);
 				seed.current += list[j] + ';';
 				list.splice(j, 1);
@@ -71,6 +72,7 @@ const Settings = (props: any) => {
 				}}
 			>
 				<TextField
+					label='Seed'
 					placeholder='Leave empty for new one'
 					color='primary'
 					fullWidth
@@ -81,6 +83,19 @@ const Settings = (props: any) => {
 					}}
 				/>
 				<TextField
+					label='Quantity'
+					placeholder=' '
+					color='primary'
+					type='number'
+					defaultValue={limit.current}
+					onChange={(event) => {
+						limit.current = +event.target.value > 0 ? event.target.value : '1';
+						seed.current = '';
+						Seed();
+					}}
+				/>
+				<TextField
+					label='Links'
 					placeholder='Paste links here'
 					multiline
 					color='primary'
