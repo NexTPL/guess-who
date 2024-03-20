@@ -34,6 +34,7 @@ const Settings = (props: any) => {
 				seed.current += list[j] + ';';
 				list.splice(j, 1);
 			}
+			navigator.clipboard.writeText(seed.current);
 		}
 		Encode();
 	};
