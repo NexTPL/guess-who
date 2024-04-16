@@ -1,29 +1,12 @@
 import { Box, Button, Modal, TextField } from '@mui/material';
 import { useRef } from 'react';
+import Cards from './Cards';
 
 const Settings = (props: any) => {
-	const string = useRef('');
 	const seed = useRef('');
 	const cards = useRef([{}]);
 	const limit = useRef('20');
 	const selected = useRef('');
-
-	const Cards = () => {
-		cards.current = [];
-		seed.current = '';
-
-		const lines = string.current.split('\n').filter((n) => n);
-		if (!lines[0]) return;
-		for (let i = 0; i < lines.length; i++) {
-			const card = lines[i].split(' ').filter((n) => n);
-			cards.current.push({
-				url: card[0],
-				name: card[1],
-				id: i,
-			});
-		}
-		Seed();
-	};
 
 	const Seed = () => {
 		const list = [];
@@ -55,6 +38,11 @@ const Settings = (props: any) => {
 			props.data({ cards: final, player: selected.current });
 	};
 
+	const HandleCards = (data: []) => {
+		cards.current = data;
+		Seed();
+	};
+
 	return (
 		<Modal
 			open={props.open}
@@ -73,20 +61,7 @@ const Settings = (props: any) => {
 					gap: 2,
 				}}
 			>
-				<TextField
-					label='Links'
-					placeholder='Paste links here'
-					multiline
-					color='primary'
-					fullWidth
-					maxRows={30}
-					defaultValue={string.current}
-					onChange={(event) => {
-						string.current = event.target.value;
-						Cards();
-					}}
-				/>
-
+				<Cards cards={HandleCards} />
 				<TextField
 					label='Seed'
 					placeholder='Leave empty for new one'
