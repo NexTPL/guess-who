@@ -61,43 +61,49 @@ const Settings = (props: any) => {
 					gap: 2,
 				}}
 			>
+				<Box
+					sx={{
+						display: 'flex',
+						flexDirection: 'row',
+						gap: '10px',
+					}}
+				>
+					<TextField
+						label='Seed'
+						placeholder='Leave empty for new one'
+						color='primary'
+						fullWidth
+						defaultValue={seed.current}
+						onChange={(event) => {
+							seed.current = event.target.value;
+							Seed();
+						}}
+					/>
+					<TextField
+						label='Quantity'
+						placeholder=' '
+						color='primary'
+						type='number'
+						defaultValue={limit.current}
+						onChange={(event) => {
+							limit.current = +event.target.value > 0 ? event.target.value : '1';
+							seed.current = '';
+							Seed();
+						}}
+					/>
+					<TextField
+						label='Character ID'
+						placeholder='RANDOM'
+						color='primary'
+						maxRows={30}
+						defaultValue={selected.current}
+						onChange={(event) => {
+							selected.current = +event.target.value > 0 ? event.target.value : '';
+							Encode();
+						}}
+					/>
+				</Box>
 				<Cards cards={HandleCards} />
-				<TextField
-					label='Seed'
-					placeholder='Leave empty for new one'
-					color='primary'
-					fullWidth
-					defaultValue={seed.current}
-					onChange={(event) => {
-						seed.current = event.target.value;
-						Seed();
-					}}
-				/>
-				<TextField
-					label='Quantity'
-					placeholder=' '
-					color='primary'
-					type='number'
-					defaultValue={limit.current}
-					onChange={(event) => {
-						limit.current = +event.target.value > 0 ? event.target.value : '1';
-						seed.current = '';
-						Seed();
-					}}
-				/>
-				<TextField
-					label='Character ID'
-					placeholder='Number or leave empty for random'
-					multiline
-					color='primary'
-					fullWidth
-					maxRows={30}
-					defaultValue={selected.current}
-					onChange={(event) => {
-						selected.current = +event.target.value > 0 ? event.target.value : '';
-						Encode();
-					}}
-				/>
 
 				<Button
 					onClick={props.close}
