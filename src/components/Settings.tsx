@@ -6,6 +6,7 @@ const Settings = (props: any) => {
 	const seed = useRef('');
 	const cards = useRef([{}]);
 	const limit = useRef('20');
+	const selected = useRef('');
 
 	const Cards = () => {
 		cards.current = [];
@@ -26,7 +27,6 @@ const Settings = (props: any) => {
 
 	const Seed = () => {
 		const list = [];
-
 		if (seed.current.split(';').filter((n) => n).length === 0) {
 			for (let i = 0; i < cards.current.length; i++) list.push(i);
 			for (let i = 0; i < +limit.current && list.length != 0; i++) {
@@ -34,7 +34,7 @@ const Settings = (props: any) => {
 				seed.current += list[j] + ';';
 				list.splice(j, 1);
 			}
-			navigator.clipboard.writeText(seed.current);
+			navigator.clipboard.writeText(seed.current); // seed to clipboard
 		}
 		Encode();
 	};
@@ -51,7 +51,8 @@ const Settings = (props: any) => {
 				return; // prevent from undefined
 			}
 		}
-		props.data(final);
+		if (+selected.current <= final.length && final.length > 0)
+			props.data({ cards: final, player: selected.current });
 	};
 
 	return (
@@ -72,6 +73,20 @@ const Settings = (props: any) => {
 					gap: 2,
 				}}
 			>
+				<TextField
+					label='Links'
+					placeholder='Paste links here'
+					multiline
+					color='primary'
+					fullWidth
+					maxRows={30}
+					defaultValue={string.current}
+					onChange={(event) => {
+						string.current = event.target.value;
+						Cards();
+					}}
+				/>
+
 				<TextField
 					label='Seed'
 					placeholder='Leave empty for new one'
@@ -96,18 +111,19 @@ const Settings = (props: any) => {
 					}}
 				/>
 				<TextField
-					label='Links'
-					placeholder='Paste links here'
+					label='Character ID'
+					placeholder='Number or leave empty for random'
 					multiline
 					color='primary'
 					fullWidth
 					maxRows={30}
-					defaultValue={string.current}
+					defaultValue={selected.current}
 					onChange={(event) => {
-						string.current = event.target.value;
-						Cards();
+						selected.current = +event.target.value > 0 ? event.target.value : '';
+						Encode();
 					}}
 				/>
+
 				<Button
 					onClick={props.close}
 					sx={{

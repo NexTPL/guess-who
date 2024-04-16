@@ -16,10 +16,12 @@ const App = () => {
 		},
 	]);
 
-	const DataHandler = (data: []) => {
-		player.current = data[Math.floor(Math.random() * data.length)]['id'];
+	const DataHandler = (data) => {
+		player.current = data.player
+			? data.cards[data.player - 1]['id']
+			: data.cards[Math.floor(Math.random() * data.cards.length)]['id'];
 		number.current++;
-		setData(data);
+		setData(data.cards);
 	};
 
 	return (
