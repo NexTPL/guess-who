@@ -1,12 +1,27 @@
-import { Box, Button, Modal, TextField } from '@mui/material';
-import { useRef } from 'react';
-import Cards from './Cards';
+import { Box, Button, MenuItem, Modal, TextField } from '@mui/material';
+import { useEffect, useRef, useState } from 'react';
+import { collection, doc, getDocs, setDoc } from 'firebase/firestore';
+import { db } from '../firebase';
 
 const Settings = (props: any) => {
 	const seed = useRef('');
 	const cards = useRef([{}]);
 	const limit = useRef('20');
 	const selected = useRef('');
+	const string = useRef('');
+	const [template, setTemplate] = useState('');
+	const [templates, setTemplates] = useState([{ name: 'Loading', cards: [{}], id: 0 }]);
+
+	useEffect(() => {
+		getTemplates();
+	}, []);
+
+	const getTemplates = async () => {
+		await getDocs(collection(db, 'templates')).then((querySnapshot) => {
+			const newData = querySnapshot.docs.map((doc) => ({ ...doc.data(), id: +doc.id }));
+			setTemplates([...newData, { name: 'Own', id: newData.length }]);
+		});
+	};
 
 	const Seed = () => {
 		const list = [];
@@ -34,22 +49,44 @@ const Settings = (props: any) => {
 				return; // prevent from undefined
 			}
 		}
-		if (+selected.current <= final.length && final.length > 0)
-			props.data({ cards: final, player: selected.current });
+		props.data({ cards: final, player: selected.current });
 	};
 
-	const HandleCards = (data: []) => {
-		cards.current = data;
+	const Convert = () => {
+		cards.current = [];
+		const lines = string.current.split('\n').filter((n) => n);
+		if (!lines[0]) return;
+		for (let i = 0; i < lines.length; i++) {
+			const card = lines[i].split(' ').filter((n) => n);
+			cards.current.push({
+				url: card[0],
+				name: card[1],
+				id: i,
+			});
+		}
+		console.log(cards.current);
 		Seed();
 	};
 
+	const handleChange = (e: string) => {
+		setTemplate(e);
+		if (+e !== templates.length - 1) {
+			cards.current = templates[+e].cards;
+			seed.current = '';
+			Seed();
+		} else {
+			Convert();
+		}
+	};
+
+	const addTemplate = async () => {
+		// TODO ADD LOGIC
+		const templatesRef = collection(db, 'templates');
+		await setDoc(doc(templatesRef, `${templates.length - 1}`), {});
+	};
+
 	return (
-		<Modal
-			open={props.open}
-			onClose={props.close}
-			aria-labelledby='modal-modal-title'
-			aria-describedby='modal-modal-description'
-		>
+		<Modal open={props.open} onClose={props.close} aria-labelledby='modal-modal-title' aria-describedby='modal-modal-description'>
 			<Box
 				sx={{
 					height: '100vh',
@@ -97,13 +134,53 @@ const Settings = (props: any) => {
 						color='primary'
 						maxRows={30}
 						defaultValue={selected.current}
-						onChange={(event) => {
-							selected.current = +event.target.value > 0 ? event.target.value : '';
-							Encode();
-						}}
+						// onChange={(event) => {
+						// 	selected.current = +event.target.value > 0 ? event.target.value : '';
+						// 	Encode();
+						// }}
 					/>
 				</Box>
-				<Cards cards={HandleCards} />
+				<TextField select value={template} label='Template' onChange={(e) => handleChange(e.target.value)}>
+					{templates.map((temp) => (
+						<MenuItem value={temp.id} key={temp.id}>
+							{templates[temp.id].name}
+						</MenuItem>
+					))}
+				</TextField>
+				{+template == templates.length - 1 && (
+					<Box
+						sx={{
+							display: 'flex',
+							flexDirection: 'column',
+							gap: 2,
+						}}
+					>
+						<TextField
+							label='Links'
+							placeholder='url name'
+							multiline
+							color='primary'
+							fullWidth
+							maxRows={30}
+							defaultValue={string.current}
+							onChange={(event) => {
+								string.current = event.target.value;
+								Convert();
+							}}
+						/>
+						<Button
+							onClick={() => addTemplate()}
+							disabled
+							sx={{
+								width: '130px',
+								backgroundColor: '#1E1E1E',
+								marginX: 'auto',
+							}}
+						>
+							Add Template
+						</Button>
+					</Box>
+				)}
 
 				<Button
 					onClick={props.close}

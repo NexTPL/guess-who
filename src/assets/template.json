@@ -1,0 +1,285 @@
+{
+	"name": "Template 1",
+	"cards": [
+		{
+			"url": "https://i.ytimg.com/vi/OP1U199MTQs/maxresdefault.jpg",
+			"name": "Panopticon",
+			"id": 0
+		},
+		{
+			"url": "https://th.bing.com/th/id/OIP.SyNoIczKPr3Shu02V4vvoAAAAA?rs=1&pid=ImgDetMain",
+			"name": "Guts",
+			"id": 1
+		},
+		{
+			"url": "https://schaken-mods.com/uploads/monthly_2023_06/rssImage-b29af5598ccbc7e15964d88e00855506.jpeg.53d1074e4a3cb4f2e246ef66f0d73b8e.jpeg",
+			"name": "Vergil",
+			"id": 2
+		},
+		{
+			"url": "https://th.bing.com/th/id/OIP.lz-1EarTQkPiqLtgkDJNnAHaFz?rs=1&pid=ImgDetMain",
+			"name": "V1",
+			"id": 3
+		},
+		{
+			"url": "https://th.bing.com/th/id/OIP.G5c9pe6HtS5bqMTORxC-ZAHaEK?rs=1&pid=ImgDetMain",
+			"name": "Yipeeeeee",
+			"id": 4
+		},
+		{
+			"url": "https://th.bing.com/th/id/OIP.hOKMBm2qjbei_OdPqlwnywHaEK?rs=1&pid=ImgDetMain",
+			"name": "stiv",
+			"id": 5
+		},
+		{
+			"url": "https://i.redd.it/peby4bercai11.jpg",
+			"name": "Doomguy",
+			"id": 6
+		},
+		{
+			"url": "https://i.pinimg.com/474x/87/86/da/8786da0516c51c75aa0a8ec2c82d163e.jpg",
+			"name": "2B",
+			"id": 7
+		},
+		{
+			"url": "https://i.kym-cdn.com/entries/icons/facebook/000/048/108/dashspider.jpg",
+			"name": "Spider",
+			"id": 8
+		},
+		{
+			"url": "https://media1.tenor.com/m/2tmFzIpCJTYAAAAd/shinji-shinji-ikari.gif",
+			"name": "Shinji",
+			"id": 9
+		},
+		{
+			"url": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSCI55XgZRqLk0eW7OtViqHl-PTWg0a-YQRhlwl5S4fxOc-nFFr0evsSWbAyuzIaKLwbXc&usqp=CAU",
+			"name": "Armstrong",
+			"id": 10
+		},
+		{
+			"url": "https://p16-capcut-sign-va.ibyteimg.com/tos-maliva-v-be9c48-us/o8fE9BvXEpIASP6B0Fo1EDiiGZAqAyIxBrgBBC~tplv-nhvfeczskr-1:250:0.webp?lk3s=44acef4b&x-expires=1734775505&x-signature=p6tJIiz%2Bf9%2F70MVFOArN02DwZtw%3D",
+			"name": "Fryderyk",
+			"id": 11
+		},
+		{
+			"url": "https://pbs.twimg.com/media/FYYNJqHXwAMunOv.jpg:large",
+			"name": "Glados",
+			"id": 12
+		},
+		{
+			"url": "https://us-tuna-sounds-images.voicemod.net/7ebf4c0f-37f0-4ff2-b48e-4e04b50404b9-1680093532853.png",
+			"name": "Wheatley",
+			"id": 13
+		},
+		{
+			"url": "https://i.pinimg.com/originals/6c/b4/cf/6cb4cf5c159e7fd4318d39dd918a2ca9.jpg",
+			"name": "Mayuri",
+			"id": 14
+		},
+		{
+			"url": "https://images-wixmp-ed30a86b8c4ca887773594c2.wixmp.com/f/c105a218-da3d-400d-b761-c932228c4023/dab776k-8860de6c-1cde-4ab2-b98e-b001e0e0ea6d.png/v1/fill/w_1024,h_576,q_80,strp/nightmare_gracjangaming_pl_by_saneron6_dab776k-fullview.jpg?token=eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJzdWIiOiJ1cm46YXBwOjdlMGQxODg5ODIyNjQzNzNhNWYwZDQxNWVhMGQyNmUwIiwiaXNzIjoidXJuOmFwcDo3ZTBkMTg4OTgyMjY0MzczYTVmMGQ0MTVlYTBkMjZlMCIsIm9iaiI6W1t7ImhlaWdodCI6Ijw9NTc2IiwicGF0aCI6IlwvZlwvYzEwNWEyMTgtZGEzZC00MDBkLWI3NjEtYzkzMjIyOGM0MDIzXC9kYWI3NzZrLTg4NjBkZTZjLTFjZGUtNGFiMi1iOThlLWIwMDFlMGUwZWE2ZC5wbmciLCJ3aWR0aCI6Ijw9MTAyNCJ9XV0sImF1ZCI6WyJ1cm46c2VydmljZTppbWFnZS5vcGVyYXRpb25zIl19.FlTuLLicO5162iLXyiSuiK5TNbO5C9T_BDtnzjjV1kQ",
+			"name": "GracjanGamingPL",
+			"id": 15
+		},
+		{
+			"url": "https://th.bing.com/th/id/OIP.b_4j9tvGZ2icQDWX2gx7DwAAAA?rs=1&pid=ImgDetMain",
+			"name": "Cacodemon",
+			"id": 16
+		},
+		{
+			"url": "https://i.pinimg.com/originals/dd/91/d2/dd91d24569abe15e38d7fd219108c85f.jpg",
+			"name": "Grubytf2",
+			"id": 17
+		},
+		{
+			"url": "https://media.tenor.com/8BRnyD4OPAAAAAAd/gman-half-life.gif",
+			"name": "G-man",
+			"id": 18
+		},
+		{
+			"url": "https://www.sscadda.com/wp-content/uploads/2020/04/13145334/polygon-1024x521.jpg",
+			"name": "SuperPolygon",
+			"id": 19
+		},
+		{
+			"url": "https://th.bing.com/th/id/OIP.wjbCX8b7uGfVKVz4u_Nf2QAAAA?rs=1&pid=ImgDetMain",
+			"name": "Bandit",
+			"id": 20
+		},
+		{
+			"url": "https://preview.redd.it/fyq6tnrydu131.png?auto=webp&s=fe932a80031a3a8f2ab4620e47e953320fc1722e",
+			"name": "Hajime",
+			"id": 21
+		},
+		{
+			"url": "https://i.kym-cdn.com/photos/images/facebook/002/493/218/6d0",
+			"name": "BocchiTheRock",
+			"id": 22
+		},
+		{
+			"url": "https://th.bing.com/th/id/OIP.sF_7A0Osna3db5b6WJ__agHaHa?rs=1&pid=ImgDetMain",
+			"name": "Tom",
+			"id": 23
+		},
+		{
+			"url": "https://th.bing.com/th/id/OIP.QKcOxw6UJSnnzbcIDYNZigAAAA?rs=1&pid=ImgDetMain",
+			"name": "Jerry",
+			"id": 24
+		},
+		{
+			"url": "https://pbs.twimg.com/media/F-fnZ67XQAAEPtD.jpg",
+			"name": "Gimper",
+			"id": 25
+		},
+		{
+			"url": "https://pbs.twimg.com/media/FrswBtmWAAAOSTB?format=jpg&name=small",
+			"name": "MatPat",
+			"id": 26
+		},
+		{
+			"url": "https://media1.tenor.com/m/_1AXmAUNVmkAAAAC/villain-chillin-like-a-villain.gif",
+			"name": "Dastardly",
+			"id": 27
+		},
+		{
+			"url": "https://media1.tenor.com/m/UjQkCTOcuTIAAAAd/buggy-one-piece.gif",
+			"name": "Buggy",
+			"id": 28
+		},
+		{
+			"url": "https://media1.tenor.com/m/3t3jJz4eWHYAAAAd/%D1%88%D0%B5%D0%B2%D1%86%D0%BE%D0%B2.gif",
+			"name": "Adrian",
+			"id": 29
+		},
+		{
+			"url": "https://media.discordapp.net/attachments/528923785554952196/1199506324736712834/chrome_vxOoP6KT2a.png?ex=65cc04d1&is=65b98fd1&hm=c4d8b268eab1e458b889eb3f4aea970d66b4025a15b178bf6ce1b6ba5f25cc9a&=&format=webp&quality=lossless&width=890&height=890",
+			"name": "Springbonnie",
+			"id": 30
+		},
+		{
+			"url": "https://cdn.discordapp.com/attachments/528923785554952196/1198402531995439155/Discord_NBJCatzR6D.png?ex=65c800d4&is=65b58bd4&hm=843664855445a0c59cb23b5fbfcc455dad224c15f7a70a17885b59a01556aa81&",
+			"name": "Julian",
+			"id": 31
+		},
+		{
+			"url": "https://media.discordapp.net/attachments/528923785554952196/1198402376739070082/chrome_bprwdXO51R.png?ex=65c800af&is=65b58baf&hm=2a83c0d1c42205354e5abdba4de5493fe0c058ec04ef26c19e4e403dc34cde2c&=&format=webp&quality=lossless&width=1319&height=890",
+			"name": "SansUndertale",
+			"id": 32
+		},
+		{
+			"url": "https://media.discordapp.net/attachments/528923785554952196/1198397507118567504/chrome_zwt7YzzOoD.png?ex=65c7fc26&is=65b58726&hm=ed18c2e421411ac94ff424f75bed57b593ee9d51a0166c49ea0c0af406f796d8&=&format=webp&quality=lossless&width=692&height=552",
+			"name": "HeroGraj",
+			"id": 33
+		},
+		{
+			"url": "https://media.discordapp.net/attachments/876434274142806036/1201323457619697825/crpyo99rfnb81.png?ex=65c966a7&is=65b6f1a7&hm=fef475af46b8f5c12170f57f44fccc02f6c19354788462154f7e1aac909833a1&=&format=webp&quality=lossless&width=703&height=601",
+			"name": "Peak",
+			"id": 34
+		},
+		{
+			"url": "https://media.discordapp.net/attachments/528923785554952196/1132647619508846602/alfa.gif?ex=65c8bacc&is=65b645cc&hm=4bee549c484f3ce9f3fb85d04f8fcd1033bbd273ae1763a9738385651eba939c&=&width=385&height=392",
+			"name": "Alfa",
+			"id": 35
+		},
+		{
+			"url": "https://i.pinimg.com/originals/bc/06/5c/bc065c09a2d53e1abc6076d56a1b610e.jpg",
+			"name": "Gintoki",
+			"id": 36
+		},
+		{
+			"url": "https://store.playstation.com/store/api/chihiro/00_09_000/container/CL/es/99/UP0177-CUSA05070_00-AV00000000000004/0/image?_version=00_09_000&platform=chihiro&bg_color=000000&opacity=100&w=720&h=720",
+			"name": "Kiryu",
+			"id": 37
+		},
+		{
+			"url": "https://media.discordapp.net/attachments/538686796146540544/1183881195524726784/images.png?ex=65ca8bc8&is=65b816c8&hm=ba7f86c8d3a03978f67b3821d056ee8d8ff1f965fd70207f0abdb231a0b07649&=&format=webp&quality=lossless&width=424&height=383",
+			"name": "Teletubiś",
+			"id": 38
+		},
+		{
+			"url": "https://media.discordapp.net/attachments/661748624820273182/692036509980950578/Poster.png?ex=65cb8eb9&is=65b919b9&hm=9626883d450f98f17e38991f36acc7bf6c5c05831561767d8bf49025836580b9&=&format=webp&quality=lossless&width=1571&height=883",
+			"name": "Zajcu37",
+			"id": 39
+		},
+		{
+			"url": "https://media.discordapp.net/attachments/332073491337707520/1187467024553746463/Geezer.png?ex=65ce5cd8&is=65bbe7d8&hm=74e3e0a303c9b9f53a3e92eabdd593d436d01d0352d988cc7ae6871ddb624160&=&format=webp&quality=lossless&width=925&height=890",
+			"name": "WróżbitaMaciej",
+			"id": 40
+		},
+		{
+			"url": "https://media.discordapp.net/attachments/1017921419679645776/1203398501669539920/image.png?ex=65d0f330&is=65be7e30&hm=e125bc358c2ed532c1da0c90f40a82c77e81fffd3752c1a4ee429d100a851817&=&format=webp&quality=lossless&width=863&height=890",
+			"name": "Luźny",
+			"id": 41
+		},
+		{
+			"url": "https://i.redd.it/3v4i3gixom7b1.gif",
+			"name": "Isuck",
+			"id": 42
+		},
+		{
+			"url": "https://media.discordapp.net/attachments/528923785554952196/1203448736051634216/Redguy.png?ex=65d121f9&is=65beacf9&hm=2903a44f311283942b2875348a1dc0f84b229b5a9e1b819dad4a2e0d72d2331f&=&format=webp&quality=lossless&width=746&height=890",
+			"name": "Czerwony",
+			"id": 43
+		},
+		{
+			"url": "https://media.discordapp.net/attachments/528923785554952196/1203449076037980240/esp6gdbdajy61.png?ex=65d1224a&is=65bead4a&hm=ab008d44e4bf16e2a9f33d086c231e88a485cd0806287af7d24239127f0e9223&=&format=webp&quality=lossless&width=696&height=890",
+			"name": "Omniman",
+			"id": 44
+		},
+		{
+			"url": "https://media1.tenor.com/m/_iRtpyDkbfkAAAAd/the-deep-the-boys.gif",
+			"name": "Głęboki",
+			"id": 45
+		},
+		{
+			"url": "https://media1.tenor.com/m/Df2hFLS8Fa8AAAAd/gizmin-matar-o-gizmin.gif",
+			"name": "Osaka",
+			"id": 46
+		},
+		{
+			"url": "https://media.discordapp.net/attachments/528923785554952196/1203449934578188369/360.png?ex=65d12317&is=65beae17&hm=7e525765ab9a20c01e4b082e12be45a40ab8e930b77cae0f2265dd64c6fa3751&=&format=webp&quality=lossless&width=559&height=890",
+			"name": "PatrykBateman",
+			"id": 47
+		},
+		{
+			"url": "https://images-ext-2.discordapp.net/external/BoYyPOauAkRK4mUb-KKIocheqr0JQtJDgWWlLJ9nnHM/%3Fcb%3D20130813134850%26path-prefix%3Des/https/static.wikia.nocookie.net/rubik/images/f/fa/N.gif/revision/latest?format=webp&width=230&height=230",
+			"name": "NaLewą",
+			"id": 48
+		},
+		{
+			"url": "https://indianmemetemplates.com/wp-content/uploads/Sick-Spider-man.jpg",
+			"name": "Spiderman",
+			"id": 49
+		},
+		{
+			"url": "https://i.pinimg.com/474x/37/a1/d4/37a1d487d839614aa2a47a5640d7d876.jpg",
+			"name": "Fingerdash",
+			"id": 50
+		},
+		{
+			"url": "https://www.sapkokebab.com/wp-content/uploads/2016/10/pic.png",
+			"name": "Kebab",
+			"id": 51
+		},
+		{
+			"url": "https://as2.ftcdn.net/v2/jpg/00/04/53/55/1000_F_4535539_bZCK1w5Q5h8moNj0XQXunRPSQxHtNxJo.jpg",
+			"name": "Fasolka",
+			"id": 52
+		},
+		{
+			"url": "https://media.discordapp.net/attachments/1102932929744732181/1191018427897364650/maxresdefault.png?ex=65db4859&is=65c8d359&hm=7cbf8837a15510b2d7a91aef823e498008481072042bfcd93f06ed2ef6b35cdc&=&format=webp&quality=lossless&width=1571&height=883",
+			"name": "DziadUfolud",
+			"id": 53
+		},
+		{
+			"url": "https://media.discordapp.net/attachments/665930182519160858/828990130526224484/2018-08-08_18.png?ex=65d4ae39&is=65c23939&hm=b56dfa397828d7eb4dd52b7dba2cbcfc15939559738f2253f0413448abba54f3&=&format=webp&quality=lossless&width=1571&height=811",
+			"name": "Czołg",
+			"id": 54
+		},
+		{
+			"url": "https://media.discordapp.net/attachments/1102933321639538779/1199780005375377522/unknown.png?ex=65d63e34&is=65c3c934&hm=dc775282bf572ff8cbe3114d12e4d6e1aa6e86bb4fc931ecf6801dcd022267b6&=&format=webp&quality=lossless&width=691&height=691",
+			"name": "Pręt",
+			"id": 55
+		}
+	]
+}
